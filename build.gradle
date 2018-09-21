@@ -1,0 +1,28 @@
+
+buildscript {
+    ext {
+        encoding = 'UTF-8'
+        compatibility = 1.8
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    sourceCompatibility = compatibility
+    targetCompatibility = compatibility
+
+    tasks.withType(AbstractCompile) each { it.options.encoding = encoding }
+    tasks.withType(GroovyCompile) each { it.groovyOptions.encoding = encoding }
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+    }
+}
