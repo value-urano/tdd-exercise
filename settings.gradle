@@ -1,3 +1,4 @@
 rootProject.name = 'tdd-exercise'
 
 include 'exercise'
+include 'exercise-20180925'
